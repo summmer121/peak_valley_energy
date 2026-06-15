@@ -1,0 +1,8 @@
+{
+  "service": {
+    "reset_data": {
+      "name": "Reset Energy Data",
+      "description": "Reset all peak/valley energy data (daily, monthly, yearly)."
+    }
+  }
+}

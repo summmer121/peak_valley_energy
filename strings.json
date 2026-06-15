@@ -1,0 +1,82 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "峰谷电价设置",
+        "description": "设置你的总电量实体和峰谷时段",
+        "data": {
+          "name": "集成名称",
+          "energy_entity": "总电量传感器实体",
+          "peak_start_1": "第一峰段开始时间",
+          "peak_end_1": "第一峰段结束时间",
+          "peak_start_2": "第二峰段开始时间（可选）",
+          "peak_end_2": "第二峰段结束时间（可选）",
+          "peak_price": "峰段电价（元/kWh）",
+          "valley_price": "谷段电价（元/kWh）",
+          "enable_shoulder": "启用平段（尖峰平谷）"
+        }
+      },
+      "shoulder": {
+        "title": "平段设置",
+        "description": "设置平段时段和电价",
+        "data": {
+          "shoulder_start_1": "平段开始时间",
+          "shoulder_end_1": "平段结束时间",
+          "shoulder_price": "平段电价（元/kWh）",
+          "currency": "货币单位"
+        }
+      }
+    },
+    "error": {
+      "invalid_entity": "无效的实体",
+      "invalid_time": "无效的时间格式"
+    },
+    "abort": {
+      "already_configured": "该实体已被配置"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "峰谷电价选项",
+        "description": "修改峰谷时段和电价",
+        "data": {
+          "peak_start_1": "第一峰段开始时间",
+          "peak_end_1": "第一峰段结束时间",
+          "peak_start_2": "第二峰段开始时间",
+          "peak_end_2": "第二峰段结束时间",
+          "peak_price": "峰段电价（元/kWh）",
+          "valley_price": "谷段电价（元/kWh）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "daily_peak_kwh": { "name": "本日峰电量" },
+      "daily_valley_kwh": { "name": "本日谷电量" },
+      "daily_shoulder_kwh": { "name": "本日平电量" },
+      "daily_total_kwh": { "name": "本日总电量" },
+      "daily_peak_cost": { "name": "本日峰电费" },
+      "daily_valley_cost": { "name": "本日谷电费" },
+      "daily_shoulder_cost": { "name": "本日平电费" },
+      "daily_total_cost": { "name": "本日总电费" },
+      "monthly_peak_kwh": { "name": "本月峰电量" },
+      "monthly_valley_kwh": { "name": "本月谷电量" },
+      "monthly_shoulder_kwh": { "name": "本月平电量" },
+      "monthly_total_kwh": { "name": "本月总电量" },
+      "monthly_peak_cost": { "name": "本月峰电费" },
+      "monthly_valley_cost": { "name": "本月谷电费" },
+      "monthly_shoulder_cost": { "name": "本月平电费" },
+      "monthly_total_cost": { "name": "本月总电费" },
+      "yearly_peak_kwh": { "name": "本年峰电量" },
+      "yearly_valley_kwh": { "name": "本年谷电量" },
+      "yearly_shoulder_kwh": { "name": "本年平电量" },
+      "yearly_total_kwh": { "name": "本年总电量" },
+      "yearly_peak_cost": { "name": "本年峰电费" },
+      "yearly_valley_cost": { "name": "本年谷电费" },
+      "yearly_shoulder_cost": { "name": "本年平电费" },
+      "yearly_total_cost": { "name": "本年总电费" }
+    }
+  }
+}

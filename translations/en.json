@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Peak Valley Energy Setup",
+        "description": "Configure your total energy sensor and peak/valley time periods",
+        "data": {
+          "name": "Integration Name",
+          "energy_entity": "Total Energy Sensor Entity",
+          "peak_start_1": "Peak Period 1 Start",
+          "peak_end_1": "Peak Period 1 End",
+          "peak_start_2": "Peak Period 2 Start (optional)",
+          "peak_end_2": "Peak Period 2 End (optional)",
+          "peak_price": "Peak Price (CNY/kWh)",
+          "valley_price": "Valley Price (CNY/kWh)",
+          "enable_shoulder": "Enable Shoulder Period"
+        }
+      },
+      "shoulder": {
+        "title": "Shoulder Period Setup",
+        "description": "Configure shoulder period time and price",
+        "data": {
+          "shoulder_start_1": "Shoulder Period Start",
+          "shoulder_end_1": "Shoulder Period End",
+          "shoulder_price": "Shoulder Price (CNY/kWh)",
+          "currency": "Currency"
+        }
+      }
+    },
+    "error": {
+      "invalid_entity": "Invalid entity",
+      "invalid_time": "Invalid time format"
+    },
+    "abort": {
+      "already_configured": "This entity is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Peak Valley Energy Options",
+        "description": "Modify peak/valley time periods and prices",
+        "data": {
+          "peak_start_1": "Peak Period 1 Start",
+          "peak_end_1": "Peak Period 1 End",
+          "peak_start_2": "Peak Period 2 Start",
+          "peak_end_2": "Peak Period 2 End",
+          "peak_price": "Peak Price (CNY/kWh)",
+          "valley_price": "Valley Price (CNY/kWh)"
+        }
+      }
+    }
+  }
+}
