@@ -1,7 +1,7 @@
 {
   "domain": "peak_valley_energy",
   "name": "Peak Valley Energy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "documentation": "https://github.com/summmer121/peak_valley_energy",
   "issue_tracker": "https://github.com/summmer121/peak_valley_energy/issues",
   "dependencies": ["recorder"],

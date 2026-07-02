@@ -270,9 +270,9 @@ class PeakValleySensor(SensorEntity):
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry.entry_id)},
             name=entry.title or "峰谷电价",
-            manufacturer="Peak Valley Energy",
+            manufacturer="summer",
             model="Electricity Tariff Tracker",
-            sw_version="1.0.0",
+            sw_version="1.1.0",
         )
 
         # Register for updates

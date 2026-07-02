@@ -76,7 +76,8 @@
       "yearly_peak_cost": { "name": "本年峰电费" },
       "yearly_valley_cost": { "name": "本年谷电费" },
       "yearly_shoulder_cost": { "name": "本年平电费" },
-      "yearly_total_cost": { "name": "本年总电费" }
+      "yearly_total_cost": { "name": "本年总电费" },
+      "current_price": { "name": "当前电价" }
     }
   }
 }
