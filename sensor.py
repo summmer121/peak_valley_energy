@@ -237,6 +237,16 @@ COST_SENSORS: tuple[PeakValleySensorDescription, ...] = (
     ),
 )
 
+CURRENT_PRICE_SENSORS: tuple[PeakValleySensorDescription, ...] = (
+    PeakValleySensorDescription(
+        key="current_price",
+        name="当前电价",
+        native_unit_of_measurement="¥/kWh",
+        suggested_display_precision=4,
+        icon="mdi:cash-clock",
+    ),
+)
+
 
 class PeakValleySensor(SensorEntity):
     """Representation of a Peak Valley Energy sensor."""
@@ -286,6 +296,8 @@ class PeakValleySensor(SensorEntity):
         # Round to 3 decimal places for kWh, 4 for cost
         if "kwh" in self.entity_description.key:
             return round(val, 3)
+        if self.entity_description.key == "current_price":
+            return round(val, 4)
         return round(val, 4)
 
     @property
@@ -310,6 +322,10 @@ async def async_setup_entry(
 
     # Add all cost sensors
     for description in COST_SENSORS:
+        entities.append(PeakValleySensor(coordinator, description, entry))
+
+    # Add current price sensor
+    for description in CURRENT_PRICE_SENSORS:
         entities.append(PeakValleySensor(coordinator, description, entry))
 
     async_add_entities(entities)

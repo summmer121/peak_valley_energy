@@ -80,6 +80,7 @@ class PeakValleyEnergyCoordinator:
         self._store: Store | None = None
         self._data: dict[str, Any] = {}
         self._listeners: list = []
+        self._current_price: float = 0.0
 
     def get_tariff(self, now: datetime) -> str:
         """Determine which tariff period the given time falls into."""
@@ -253,6 +254,9 @@ class PeakValleyEnergyCoordinator:
         # Notify listeners
         self._notify_listeners()
 
+        # Update current price
+        self._current_price = self._get_price_for_tariff(tariff)
+
     def _notify_listeners(self) -> None:
         """Notify registered listeners that data has updated."""
         for listener in self._listeners:
@@ -303,6 +307,8 @@ class PeakValleyEnergyCoordinator:
             "yearly_valley_cost": d["yearly_cost"]["valley"],
             "yearly_shoulder_cost": d["yearly_cost"]["shoulder"],
             "yearly_total_cost": d["yearly_cost"]["total"],
+            # Current price
+            "current_price": self._get_price_for_tariff(self.get_tariff(datetime.now())),
         }
 
     async def async_save_periodic(self, _now: datetime) -> None:
